@@ -1,7 +1,7 @@
 {
   "name": "locals",
   "version": "1.0.0",
-  "description": "Local directory aimmed to service people who need help with small tasks",
+ "engines":{	"node":"10.16.0"}"description": "Local directory aimmed to service people who need help with small tasks",
   "main": "server.js",
   "client-install": "npm install --prefix client",
   "scripts": {
