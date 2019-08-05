@@ -1,7 +1,7 @@
 //Importing packages needed to run servers and DB
 const mongoose = require('mongoose')
 const express = require('express')
-require('dotenv').config()
+// require('dotenv').config()
 const port = 5000
 const path = require('path')
 
@@ -11,9 +11,11 @@ const app = express()
 //Body parsing middleware provided by Express
 app.use(express.json())
 
+const db = 'mongodb+srv://Cisco:978441Cisco@cluster0-p7dj5.mongodb.net/test?retryWrites=true&w=majority'
+
 //Connecting to MongoDB using Mongoose
 mongoose
-    .connect(process.env.MONGO_URI, {useNewUrlParser: true})
+    .connect(db, {useNewUrlParser: true})
     .then( () =>{
         console.log('MongoDB connected via Mongoose')
     })
