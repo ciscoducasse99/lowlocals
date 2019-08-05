@@ -1,0 +1,37 @@
+.task-btn {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.btn-circle{
+  border-radius: 20px;
+  font-size: 25px;
+  padding:8px;
+}
+.btn-circle:hover{
+  cursor: pointer;
+  background-color: #efefef;
+  color:#007bff;
+}
+
+
+.card-title{
+  font-size:20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.btn-task-modal{
+  border-radius:20px;
+  background-color: #0070f3;
+  box-shadow: 0 4px 14px 0 rgba(0,118,255,0.39);
+}
+
+.form-group .input-rounded{
+  border-radius: 20px;
+}
