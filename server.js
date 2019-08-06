@@ -12,10 +12,10 @@ app.use(express.json())
 
 //Connecting to MongoDB using Mongoose
 mongoose
-    .connect(process.env.MONGO_KEY, {useNewUrlParser: true})
+    .connect('mongodb+srv://Cisco:978441Cisco@cluster0-p7dj5.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
     .then( () =>{
         console.log('MongoDB connected via Mongoose')
-        console.l0g('mongo key is:' + process.env.MONGO_KEY)
+        console.log('mongo key is:' + process.env.MONGO_URI)
     })
     .catch( err => {
         console.log('error message: ' + err)
