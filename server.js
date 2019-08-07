@@ -36,6 +36,9 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
-app.listen(port, () =>{
-    console.log('Server running on port: ' + port)
-})
+var port_number = app.listen(process.env.PORT || 3000);
+app.listen(port_number);
+
+// app.listen(port, () =>{
+//     console.log('Server running on port: ' + port)
+// })
