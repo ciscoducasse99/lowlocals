@@ -4,7 +4,7 @@ const express = require('express')
 const port = 5000
 const path = require('path')
 const config = require('config')
-//require('dotenv').config()
+require('dotenv').config()
 
 //Variable 'app' used to use express
 const app = express()
@@ -14,7 +14,7 @@ app.use(express.json())
 
 //Connecting to MongoDB using Mongoose
 mongoose
-    .connect('mongodb+srv://Cisco:978441Cisco@cluster0-p7dj5.mongodb.net/test?retryWrites=true', {useNewUrlParser: true})
+    .connect(process.env.MONGO_URI, {useNewUrlParser: true})
     .then( () =>{
         console.log('MongoDB connected via Mongoose')
     })
@@ -36,8 +36,10 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
-var port_number = app.listen(process.env.PORT || 3000);
-app.listen(port_number);
+var port_number = app.listen(process.env.PORT || 5000);
+app.listen(port_number, ()=>{
+  console.log('Server started ')
+});
 
 // app.listen(port, () =>{
 //     console.log('Server running on port: ' + port)

@@ -6,7 +6,7 @@ ModalBody,
 ModalFooter,
 Button
 } from 'reactstrap';
-import ImageUploader from 'react-images-upload';
+import ImageUploader from 'react-images-upload'
 import { postTask } from '../actions/taskActions'
 import { connect } from 'react-redux'
 import '../App.css'
@@ -17,7 +17,7 @@ class TaskButton extends Component{
     super(props);
 
     this.state={
-      image:"https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/vprojectold-icon-ju-82_1_3.jpg?w=400&dpr=1&fit=default&crop=default&auto=format&fm=pjpg&q=75&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-1.1.1&s=b85e1c7795a610b6839e4d904ad61eb5",
+      image:"https://static.umotive.com/img/product_image_thumbnail_placeholder.png",
       name:"",
       eta:"",
       description:"",
@@ -45,6 +45,7 @@ class TaskButton extends Component{
   }
 
   handleChange = (e) =>{
+     console.log(e.target.name+ ': ' + e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })

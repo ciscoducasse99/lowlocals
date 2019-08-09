@@ -41,6 +41,7 @@ class Tasks extends Component {
   render() {
     const { isOpened, viewed } = this.state;
     const { tasks } = this.props.tasks;
+    console.log(tasks);
 
     return (
       <div>
@@ -54,7 +55,7 @@ class Tasks extends Component {
             />
           }
           <Row className="flex-row">
-            {tasks.map(({ name, image, description }) => (
+            {tasks.map(({ name, image, eta }) => (
                 <Col key={name}
                   xs="11"
                   sm="6"
@@ -62,21 +63,22 @@ class Tasks extends Component {
                   className="mx-auto my-sm-2 my-lg-1"
                   >
                     <Card
-                      className="task-card border-0 rounded shadow-sm my-3"
-                      style={{backgroundColor:"rgb(248, 249, 250)"}}
+                      className="task-card border-0 rounded shadow my-3"
                     >
                       <CardImg
                         top
                         width="100%"
                         src={image}
+                        className="border-0"
                         style={{
                           width: "100%",
                           height: "45vh",
-                          objectFit: "cover"
+                          objectFit: "cover",
+                          backgroundColor:"gray"
                         }}/>
 
                       <CardBody>
-                        <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA: 15 minutes</p>
+                        <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA:{eta}</p>
                           <CardTitle className="card-title m-0 text-left text-truncate">{name}</CardTitle>
                       </CardBody>
                         <Button

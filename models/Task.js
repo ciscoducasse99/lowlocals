@@ -4,7 +4,7 @@ const Schema = mongoose.Scheme
 
 //Creating new Scheme for 'Task'... Basically just tells API what it expects
 const TaskSchema = {
-    title:{
+    name:{
       type:String,
       require:true
     },
@@ -17,11 +17,11 @@ const TaskSchema = {
     },
     contact:{
       type:String,
-      required:false
+      required:true
     },
     eta:{
       type:String,
-      required:false
+      required:true
     }
 }
 

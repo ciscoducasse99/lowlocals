@@ -16,7 +16,10 @@ const App = () =>{
     <Provider store={store}>
       <div className="App">
         <AppNavbar />
-        <Tasks/>
+        <Tasks style={{
+          minHeight:"100%",
+          backgroundColor:"#fdfdfd"
+        }}/>
         <TaskButton/>
       </div>
     </Provider>

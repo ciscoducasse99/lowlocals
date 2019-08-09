@@ -10,7 +10,7 @@ import {
 
 const TaskModal = (props) =>{
   return (
-    <Modal isOpen={props.isOpen} backdrop="true">
+    <Modal isOpen={props.isOpened} backdrop="true">
       <ModalHeader toggle={props.onClose}>{props.taskData.name}</ModalHeader>
       <ModalBody>
         <CardImg
