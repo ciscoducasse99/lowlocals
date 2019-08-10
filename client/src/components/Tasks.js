@@ -21,7 +21,6 @@ class Tasks extends Component {
 
   componentDidMount(){
     this.props.getTasks();
-    console.log(this.props)
   }
 
   handleShow = name => {
@@ -41,7 +40,6 @@ class Tasks extends Component {
   render() {
     const { isOpened, viewed } = this.state;
     const { tasks } = this.props.tasks;
-    console.log(tasks);
 
     return (
       <div>
@@ -50,20 +48,21 @@ class Tasks extends Component {
             viewed &&
             <TaskModal
               isOpen={isOpened}
-              taskData={tasks.find(task => task.name === viewed)}
+              task={tasks.find(task => task.name === viewed)}
               onClose={this.handleClose}
             />
           }
           <Row className="flex-row">
-            {tasks.map(({ name, image, eta }) => (
-                <Col key={name}
+            {tasks.map(({ _id, name, image, eta }) => (
+                <Col key={_id}
                   xs="11"
                   sm="6"
                   lg="4"
                   className="mx-auto my-sm-2 my-lg-1"
                   >
                     <Card
-                      className="task-card border-0 rounded shadow my-3"
+                      className="task-card border-0 shadow my-3"
+                      style={{borderRadius:"17px "}}
                     >
                       <CardImg
                         top
@@ -74,16 +73,17 @@ class Tasks extends Component {
                           width: "100%",
                           height: "45vh",
                           objectFit: "cover",
-                          backgroundColor:"gray"
+                          backgroundColor:"gray",
+                          borderRadius:"17px 17px 0px 0px"
                         }}/>
 
                       <CardBody>
-                        <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA:{eta}</p>
-                          <CardTitle className="card-title m-0 text-left text-truncate">{name}</CardTitle>
+                        <CardTitle className="card-title m-0 text-left text-truncate">{name}</CardTitle>
+                        <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA: {eta}</p>
                       </CardBody>
                         <Button
                           color="primary"
-                          className="w-50 mb-3 mx-auto shadow-sm btn-task-modal"
+                          className="w-50 mb-4 mx-auto shadow btn-task-modal"
                           onClick={() => this.handleShow(name)}
                           style={{
                             borderRadius:"20px",

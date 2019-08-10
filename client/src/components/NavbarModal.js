@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {
   Modal,
-  ModalFooter,
-  Button,
   Carousel,
   CarouselItem,
   CarouselControl,
@@ -11,11 +9,6 @@ import {
 } from 'reactstrap';
 import taskbutton from '../images/taskbutton.jpg'
 
-// import Deletion from './NavModal/Deletion';
-// import FinalStep from './NavModal/FinalStep';
-// import HowToP1 from './NavModal/HowToP1';
-// import SitePurpose from './NavModal/SitePurpose';
-console.log(taskbutton)
 const items = [
   {
     src: {taskbutton},
@@ -88,21 +81,13 @@ class NavbarModal extends Component {
 
     return (
       <Modal className="modal-lg" isOpen={this.props.isOpen} toggle={this.props.toggle} centered={true} size={'lg'}>
-        <Carousel
-          activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
-        >
+        <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous} >
           <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
             {slides}
           <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
           <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
         </Carousel>
-      <ModalFooter className="clearfix">
-          <img src='../images/taskbutton.jpeg'/>
-        </ModalFooter>
       </Modal>
-
     )
   }
 }

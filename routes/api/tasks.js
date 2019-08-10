@@ -11,7 +11,7 @@ router.get('/', (req,res) =>{
     Task.find()
         .sort({ date: -1})
         .then(items => res.json(items))
-        .catch( err =>{
+        .catch( err => {
           alert(err.message)
         })
 })
@@ -25,16 +25,17 @@ router.post('/', (req,res) =>{
     const newTask = new Task ({
         name: req.body.name,
         image: req.body.image,
-        description: req.body.description
-
+        description: req.body.description,
+        eta:req.body.eta,
+        contact:req.body.contact
     })
 
     //Save task and return response in json format
     newTask
-        .save()
-        .then(task =>
-            res.json(task)
-        )
+      .save()
+      .then(task =>
+        res.json(task)
+      )
 })
 
 module.exports = router

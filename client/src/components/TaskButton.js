@@ -62,7 +62,7 @@ class TaskButton extends Component{
       description:this.state.description,
       contact:this.state.contact,
     }
-
+    console.log('form sent' + taskForm)
     this.props.postTask(taskForm);
     this.toggle();
   }

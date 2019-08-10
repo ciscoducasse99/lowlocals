@@ -11,14 +11,14 @@ import {
 const TaskModal = (props) =>{
   return (
     <Modal isOpen={props.isOpened} backdrop="true">
-      <ModalHeader toggle={props.onClose}>{props.taskData.name}</ModalHeader>
+      <ModalHeader toggle={props.onClose}>{props.task.name}</ModalHeader>
       <ModalBody>
         <CardImg
           top
           width="100%"
-          src={props.taskData.image}
+          src={props.task.image}
         />
-        <h4>{props.taskData.description}</h4>
+        <h4>{props.task.description}</h4>
       </ModalBody>
       <ModalFooter>
         <Button
