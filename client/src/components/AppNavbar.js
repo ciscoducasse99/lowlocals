@@ -24,13 +24,11 @@ class AppNavbar extends Component {
       let lastTimeVisited = localStorage.getItem('last-visited');
       localStorage.setItem('last-visited', currentTime);
       let twelveHoursInMS = 12 * 60 * 60 * 1000;
-
       if((currentTime-lastTimeVisited) >= twelveHoursInMS){
         this.setState({
           isOpen:true
         })
       }
-
         return (
             <div style={{backgroundColor:"white"}}>
                 <Navbar

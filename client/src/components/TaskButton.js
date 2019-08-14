@@ -18,7 +18,7 @@ class TaskButton extends Component{
 
     this.state={
       image:"https://static.umotive.com/img/product_image_thumbnail_placeholder.png",
-      name:"",
+      title:"",
       eta:"",
       description:"",
       contact:"",
@@ -56,7 +56,7 @@ class TaskButton extends Component{
     e.preventDefault();
 
     const taskForm = {
-      name:this.state.name,
+      title:this.state.title,
       eta:this.state.eta,
       image:this.state.image,
       description:this.state.description,
@@ -99,13 +99,13 @@ class TaskButton extends Component{
               />
 
               <div className="form-group mb-3">
-                <label htmlFor="task-user-name" className="font-weight-bolder">Name:</label>
+                <label htmlFor="task-user-title" className="font-weight-bolder">Title:</label>
                 <input
                   type="input"
                   className="form-control input-rounded"
-                  id="task-user-name"
-                  name="name"
-                  placeholder="Enter your name"
+                  id="task-user-title"
+                  name="title"
+                  placeholder="Enter new task's title"
                   onChange={this.handleChange}/>
               </div>
 

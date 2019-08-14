@@ -23,7 +23,7 @@ router.post('/', (req,res) =>{
 
     //Create new task using Model
     const newTask = new Task ({
-        name: req.body.name,
+        title: req.body.title,
         image: req.body.image,
         description: req.body.description,
         eta:req.body.eta,

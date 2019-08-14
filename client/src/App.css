@@ -35,3 +35,7 @@
 .form-group .input-rounded{
   border-radius: 20px;
 }
+
+.modal-open{
+  overflow: hidden;
+}

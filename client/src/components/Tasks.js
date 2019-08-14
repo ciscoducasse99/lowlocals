@@ -16,44 +16,44 @@ import { getTasks } from '../actions/taskActions'
 class Tasks extends Component {
   state = {
     viewed:null,
-    isOpened:false,
+    isOpen:false,
   }
 
   componentDidMount(){
     this.props.getTasks();
   }
 
-  handleShow = name => {
+  handleShow = title => {
     this.setState({
-      viewed: name,
-      isOpened: !this.state.isOpened
+      viewed: title,
+      isOpen: !this.state.isOpened
     })
   }
 
   handleClose = () => {
     this.setState({
       viewed: null,
-      isOpened: !this.state.isOpened
+      isOpen: !this.state.isOpened
     })
   }
 
   render() {
-    const { isOpened, viewed } = this.state;
+
+    const { isOpen, viewed } = this.state;
     const { tasks } = this.props.tasks;
 
     return (
       <div>
+        {viewed && (
+          <TaskModal
+            isOpen={isOpen}
+            task={tasks.find(task => task.title === viewed)}
+            onClose={this.handleClose}
+          />
+        )}
         <Container color="light">
-          {
-            viewed &&
-            <TaskModal
-              isOpen={isOpened}
-              task={tasks.find(task => task.name === viewed)}
-              onClose={this.handleClose}
-            />
-          }
           <Row className="flex-row">
-            {tasks.map(({ _id, name, image, eta }) => (
+            {tasks.map(({ _id, title, image, eta }) => (
                 <Col key={_id}
                   xs="11"
                   sm="6"
@@ -78,13 +78,13 @@ class Tasks extends Component {
                         }}/>
 
                       <CardBody>
-                        <CardTitle className="card-title m-0 text-left text-truncate">{name}</CardTitle>
+                        <CardTitle className="card-title m-0 text-left text-truncate">{title}</CardTitle>
                         <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA: {eta}</p>
                       </CardBody>
                         <Button
                           color="primary"
                           className="w-50 mb-4 mx-auto shadow btn-task-modal"
-                          onClick={() => this.handleShow(name)}
+                          onClick={() => this.handleShow(title)}
                           style={{
                             borderRadius:"20px",
                             background:"#0070f3",
