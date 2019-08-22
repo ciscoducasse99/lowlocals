@@ -84,7 +84,7 @@ class Tasks extends Component {
                         <Button
                           color="primary"
                           className="w-50 mb-4 mx-auto shadow btn-task-modal"
-                          onClick={() => this.handleShow(title)}
+                          onClick={()=> this.handleShow(title)}
                           style={{
                             borderRadius:"20px",
                             background:"#0070f3",

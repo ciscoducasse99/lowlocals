@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AppNavbar from "./components/AppNavbar";
 import Tasks from './components/Tasks';
 import TaskButton from './components/TaskButton';
+import FullSized from './components/FullSized';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -12,12 +13,11 @@ import store from './store';
 const App = () =>{
 
   return (
-    //style={{backgroundColor:"rgb(248, 249, 250)"}}
     <Provider store={store}>
       <div className="App">
         <AppNavbar />
         <Tasks style={{
-          minHeight:"100%",
+          minHeight:"100vh",
           backgroundColor:"#fdfdfd"
         }}/>
         <TaskButton/>

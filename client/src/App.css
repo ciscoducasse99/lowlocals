@@ -1,5 +1,6 @@
 .task-btn {
   position: fixed;
+  z-index:50;
   bottom: 0px;
   right: 0px;
   height: 4.5rem;
@@ -36,6 +37,22 @@
   border-radius: 20px;
 }
 
-.modal-open{
-  overflow: hidden;
+#full-modal{
+  z-index:1072;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.full-modal-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }

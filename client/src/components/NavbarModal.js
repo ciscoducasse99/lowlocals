@@ -9,6 +9,8 @@ import {
 } from 'reactstrap';
 import taskbutton from '../images/taskbutton.jpg'
 
+import FullSized from './FullSized'
+
 const items = [
   {
     src: {taskbutton},
@@ -30,7 +32,8 @@ const items = [
 class NavbarModal extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeIndex: 0 };
+    this.state = { activeIndex: 0 , open:false};
+
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
@@ -64,7 +67,8 @@ class NavbarModal extends Component {
   }
 
   render() {
-    const { activeIndex } = this.state;
+    const { activeIndex, open } = this.state
+    const { isOpen } = this.props
 
     const slides = items.map((item) => {
       return (
@@ -79,16 +83,22 @@ class NavbarModal extends Component {
         );
     });
 
+
     return (
-      <Modal className="modal-lg" isOpen={this.props.isOpen} toggle={this.props.toggle} centered={true} size={'lg'}>
-        <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous} >
-          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-            {slides}
-          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-        </Carousel>
-      </Modal>
+      <div>
+        {isOpen ? <FullSized toggle={this.props.toggle}/> : null}
+      </div>
     )
   }
 }
+
+// <Modal className="" isOpen={this.props.isOpen} toggle={this.props.toggle} centered={true} size={'lg'}>
+//   <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous} >
+//     <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+//       {slides}
+//     <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+//     <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+//   </Carousel>
+// </Modal>
+
 export default NavbarModal;
