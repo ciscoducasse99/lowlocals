@@ -77,7 +77,7 @@ class Tasks extends Component {
                           borderRadius:"17px 17px 0px 0px"
                         }}/>
 
-                      <CardBody>
+                      <CardBody className="pb-1">
                         <CardTitle className="card-title m-0 text-left text-truncate">{title}</CardTitle>
                         <p style={{fontSize:'12px'}} className="text-left text-secondary">ETA: {eta}</p>
                       </CardBody>

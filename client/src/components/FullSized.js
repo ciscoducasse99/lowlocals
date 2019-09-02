@@ -9,9 +9,9 @@ import {
 const FullSized = ({toggle}) =>{
   return(
     <div id="full-modal">
-      <Navbar className="ml-auto" style={{backgroundColor:"white"}}>
+      <Navbar className="ml-auto" fixed style={{backgroundColor:"white"}}>
         <NavbarBrand>How to</NavbarBrand>
-        <i className="far fa-times-circle fa-2x ml-auto" onClick={toggle}/>
+        <i className="far fa-times-circle fa-2x ml-auto text-white" onClick={toggle}/>
       </Navbar>
       <div className="full-modal-container">
         <div className="mx-auto text-center">

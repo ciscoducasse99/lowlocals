@@ -13,19 +13,18 @@ const TaskModal = (props) =>{
     <Modal isOpen={props.isOpen} backdrop={true}>
       <ModalHeader toggle={props.onClose}>{props.task.title}</ModalHeader>
       <ModalBody>
-        <CardImg
-          top
-          width="100%"
+        <img
+          style={{minWidth:"100%"}}
           src={props.task.image}
         />
         <h4>{props.task.description}</h4>
       </ModalBody>
-      <ModalFooter>
-        <Button
-          onClick={props.onClose}
-          color="danger"
-        > Close </Button>
-      </ModalFooter>
+        <div>
+          <Button
+            onClick={props.onClose}
+            color="danger"
+          > Close </Button>
+        </div>
     </Modal>
   )
 }

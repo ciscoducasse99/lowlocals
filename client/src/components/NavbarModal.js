@@ -9,6 +9,8 @@ import {
 } from 'reactstrap';
 import taskbutton from '../images/taskbutton.jpg'
 
+import {TransitionGroup, CSSTransition} from 'react-transtion-group' 
+
 import FullSized from './FullSized'
 
 const items = [
